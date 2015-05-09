@@ -2,7 +2,6 @@
 
 function get_letter_interval_2(number_a, number_b){
   var new_array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-  //var newArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
   var one = 0;
   var ten = 0;
   var left = '';
