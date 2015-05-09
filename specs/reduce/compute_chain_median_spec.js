@@ -1,6 +1,6 @@
 'use strict';
 
-var compute_chain_median = require('../../practices/reduce/compute_chain_median.js');
+//var compute_chain_median = require('../../practices/reduce/compute_chain_median.js');
 
 describe('compute_chain_median', function () {
 
@@ -9,6 +9,8 @@ describe('compute_chain_median', function () {
   it('计算给定链表的中位数', function () {
 
     var result = compute_chain_median(chain);
-    expect(result).toEqual(8.5);
+    //expect(result).toEqual(8.5);
+    expect(result).toEqual(9.5);
+
   });
 });

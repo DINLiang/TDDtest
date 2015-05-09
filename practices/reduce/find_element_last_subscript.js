@@ -1,7 +1,13 @@
 'use strict';
 
-function calculate_elements_sum(collection, element) {
+function find_element_last_subscript(collection, element) {
   //在这里写入代码
+  for(var i = 0;i < collection.length;i++){
+    if(collection[i] === element){
+      var position = i;
+    }
+  }
+  return position;
 }
 
-module.exports = calculate_elements_sum;
+//module.exports = find_element_last_subscript;
