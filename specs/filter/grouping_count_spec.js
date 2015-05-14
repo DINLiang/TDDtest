@@ -8,7 +8,8 @@ describe('grouping_count', function() {
 
   it('应该从collection中选出偶数', function() {
     var result = grouping_count(collection);
-
     expect(result).toEqual({'1':6, '2':3, '3':4, '4':2});
   })
 });
+
+

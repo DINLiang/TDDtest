@@ -1,6 +1,6 @@
 'use strict';
 
-var hybrid_operation_to_uneven = require("../../../practices/superposition_operation/collection_operation/practice_3.js");
+//var hybrid_operation_to_uneven = require("../../../practices/superposition_operation/collection_operation/practice_3.js");
 
 describe('hybrid_operation_to_uneven', function() {
 
@@ -8,7 +8,7 @@ describe('hybrid_operation_to_uneven', function() {
 
   it('每一个奇数*3+5再求总和', function() {
 
-    var result = hybrid_operation_to_uneven(collection);
+    var result = hybrid_operation_to_unevens(collection);
 
     expect(result).toEqual(408);
   })

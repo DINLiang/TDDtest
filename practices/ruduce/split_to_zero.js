@@ -11,6 +11,11 @@ function split_to_zero(number) {
   // var num = 1 - number;
   //
   // return array;
+
+  var l = Math.random();
+  console.log(l);
+
+
 }
 
 //module.exports = collect_max_number;

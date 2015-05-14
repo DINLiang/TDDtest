@@ -1,8 +1,7 @@
 'use strict';
 var rank_asc = function(collection){
 
-  var array = [];
-      array = collection.sort();
+     var array = collection.sort();
       array = array.reverse();
   return array;
 };
