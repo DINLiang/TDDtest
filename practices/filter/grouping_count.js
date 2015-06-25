@@ -1,7 +1,6 @@
 'use strict';
 
 function grouping_count(collection) {
-
   var result = {};
   var  array =  uniq_number(collection);
   for(var i=0;i<array.length;i++)
@@ -22,7 +21,6 @@ function get_number(collection,array,i,result){
     }
   }
   result[temp] = number;
-  number = 0;
   return result;
 }
 

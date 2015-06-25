@@ -1,97 +1,80 @@
 'use strict';
 var even_group_calculate_average = function(collection){
-    var one = [];
-    var two = [];
-    var three = [];
-    var array = [];
-    var one_sum = 0;
-    var two_sum = 0;
-    var three_sum = 0;
-   for_one_two_three(collection,one,two,three);
-   one_sum = for_one_sum(one,one_sum);
-   two_sum = for_two_sum(two,two_sum);
-   three_sum = for_three_sum(three,three_sum);
-   array = for_array(one,two,three,one_sum,two_sum,three_sum,array);
+    //three digits 三位数
+   var one_digits = [];
+   var two_digits = [];
+   var three_digits = [];
+   var array = [];
+   var one_digits_sum = 0;
+   var two_digits_sum = 0;
+   var three_digits_sum = 0;
+   for_one_two_three(collection,one_digits,two_digits,three_digits);
+  one_digits_sum = for_sums(one_digits,one_digits_sum);
+  two_digits_sum = for_sums(two_digits,two_digits_sum);
+  three_digits_sum = for_sums(three_digits,three_digits_sum);
+   array = for_array(one_digits,two_digits,three_digits,one_digits_sum,two_digits_sum,three_digits_sum,array);
    return array;
 };
 
-function for_one_two_three(collection,one,two,three){
+function for_one_two_three(collection,one_digits,two_digits,three_digits){
   for (var i = 0; i < collection.length; i++)
   {
     if (collection[i] % 2 === 0)
     {
-      push_collection(collection,i,one,two,three);
+      push_collection(collection,i,one_digits,two_digits,three_digits);
     }
   }
 }
 
-function push_collection(collection,i,one,two,three){
-  one = push_collection_to_one(collection,i,one);
-  two = push_collection_to_two(collection,i,two);
-  three = push_collection_to_three(three,collection,i);
+function push_collection(collection,i,one_digits,two_digits,three_digits){
+  one_digits = push_collection_to_one(collection,i,one_digits);
+  two_digits = push_collection_to_two(collection,i,two_digits);
+  three_digits = push_collection_to_three(three_digits,collection,i);
 }
 
-function push_collection_to_one(collection,i,one){
+function push_collection_to_one(collection,i,one_digits){
   if (collection[i] >= 0 && collection[i] <= 9)
   {
-    one.push(collection[i]);
+    one_digits.push(collection[i]);
   }
-  return one;
+  return one_digits;
 }
 
-function push_collection_to_two(collection,i,two){
+function push_collection_to_two(collection,i,two_digits){
   if (collection[i] > 9 && collection[i] <= 99)
   {
-    two.push(collection[i]);
+    two_digits.push(collection[i]);
   }
-  return two;
+  return two_digits;
 }
 
-function push_collection_to_three(three,collection,i){
+function push_collection_to_three(three_digits,collection,i){
   if(collection[i] > 99)
   {
-    three.push(collection[i]);
+    three_digits.push(collection[i]);
   }
-  return three;
+  return three_digits;
 }
 
-function for_one_sum(one,one_sum){
-  for (var j = 0; j < one.length; j++)
+function for_sums(number,sum){
+  for (var j = 0; j < number.length; j++)
   {
-    one_sum += one[j];
+    sum += number[j];
   }
-  return one_sum;
+  return sum;
 }
 
-function for_two_sum(two,two_sum){
-  for (var k = 0; k < two.length; k++)
-  {
-    two_sum += two[k];
-  }
-  return two_sum;
-
-}
-
-function for_three_sum(three,three_sum){
-  for (var l = 0; l < three.length; l++)
-  {
-    three_sum += three[l];
-  }
-  return three_sum;
-}
-
-function for_array(one,two,three,one_sum,two_sum,three_sum,array){
-  if(one.length === 0)
+function for_array(one_digits,two_digits,three_digits,one_digits_sum,two_digits_sum,three_digits_sum,array){
+  if(one_digits.length === 0)
   {
     array = 0;
   }
   else
   {
-    array.push(Math.floor(one_sum / one.length));
-    array.push(Math.floor(two_sum / two.length));
-    array.push(Math.floor(three_sum / three.length));
+    array.push(Math.floor(one_digits_sum / one_digits.length));
+    array.push(Math.floor(two_digits_sum / two_digits.length));
+    array.push(Math.floor(three_digits_sum / three_digits.length));
   }
   return array;
 }
-
 //module.exports = even_group_calculate_average;

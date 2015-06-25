@@ -1,7 +1,6 @@
 'use strict';
 
 function hybrid_operation_to_uneven(collection) {
-
   //在这里写入代码
    var array = [];
    for(var i = 0;i<collection.length;i++)

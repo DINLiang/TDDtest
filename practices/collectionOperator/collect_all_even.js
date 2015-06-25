@@ -11,5 +11,4 @@ function collect_all_even(collection) {
   }
   return array;
 }
-
 //module.exports = collect_all_even;

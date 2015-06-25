@@ -2,7 +2,7 @@
 var is_exist_element = function(collection,element){
   var array = get_new_array(collection);
   var result = get_result(array);
-return result;
+  return result;
 };
 
 function get_new_array(collection){

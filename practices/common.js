@@ -3,14 +3,19 @@ function uniq_number(collection){
   var array = [];
   var length = collection.length;
   for(var i = 0;i < length; i++){
-    for(var j = i+1; j < length; j++){
-      if(collection[i] === collection[j] ){
-        j = ++i;
-      }
-    }
+    i = get_of_i(i,length,collection);
     array.push(collection[i]);
   }
   return array;
+}
+
+function get_of_i(i,length,collection){
+  for(var j = i+1; j < length; j++){
+    if(collection[i] === collection[j] ){
+      j = ++i;
+    }
+  }
+  return i;
 }
 
 
@@ -34,12 +39,15 @@ function for_condition_to_again(object_b,collection_a){
   var array = object_b.value;
   for(var i=0;i<array.length;i++){
     var temp = array[i];
-    for(var j=0;j<collection_a.length;j++){
-      if(collection_a[j].key == temp){
-        if(collection_a[j].count >= 3){
-          collection_a[j].count = collection_a[j].count - Math.floor(collection_a[j].count / 3);
-        }
-      }
+    collection_a = get_collection_a(collection_a,temp);
+  }
+  return collection_a;
+}
+
+function get_collection_a(collection_a,temp){
+  for(var j=0;j<collection_a.length;j++){
+    if(collection_a[j].key == temp && collection_a[j].count >= 3){
+      collection_a[j].count = collection_a[j].count - Math.floor(collection_a[j].count / 3);
     }
   }
   return collection_a;
@@ -51,16 +59,21 @@ function Statistics_count(collection){
   for(var i=0;i<array.length;i++){
     var number = 0;
     var temp = array[i];
-    for(var j =0;j<collection.length;j++){
-      if (collection[j] == temp){
-        number ++;
-      }
-    }
+    number = gets_number(collection,temp,number);
     var k = {key: temp, count: number};
     result.push(k);
     number = 0;
   }
   return result;
+}
+
+function gets_number(collection,temp,number){
+  for(var j =0;j<collection.length;j++){
+    if (collection[j] == temp){
+      number ++;
+    }
+  }
+  return number;
 }
 
 function for_condition_Statistics_count(collection){
@@ -97,13 +110,11 @@ function object_count(collection,temp,number){
 function for_condition_to_letter(collection,i,new_array,array){
     var ten = parseInt(collection[i] / 26);
     var one = collection[i] - ten * 26;
+    var left = new_array[ten - 1];
+    var right = new_array [one - 1];
     if (collection[i] % 26 == 0) {
-      var left = new_array[ten - 2];
-      var right = new_array [new_array.length - -(one - 1)];
-    }
-    else {
-      left = new_array[ten - 1];
-      right = new_array [one - 1];
+       left = new_array[ten - 2];
+       right = new_array [new_array.length - -(one - 1)];
     }
     var  lr = left + right;
     array.push(lr);

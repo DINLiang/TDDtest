@@ -14,13 +14,10 @@ function compare_collections(collection_a, collection_b) {
 function get_tf(i,collection_b,collection_a,tf){
   for(var j = i; j<collection_b.length;j++)
   {
+    tf = false;
     if(collection_a[i] === collection_b[j])
     {
       tf = true;
-    }
-    else
-    {
-      tf = false;
     }
   }
   return tf;

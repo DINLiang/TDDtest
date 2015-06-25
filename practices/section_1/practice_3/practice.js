@@ -1,6 +1,5 @@
 function collection_same_elements(collection_a, object_b) {
   //在这里写入代码
-
   var collection_b = object_b.value;
   var array = [];
   for(var i = 0;i < collection_a.length;i++)

@@ -13,13 +13,10 @@ function collect_min_number(collection) {
 function get_numbers(i,collection,number){
   for(var j = i - 1;j >=0;j--)
   {
+    number = collection[j];
     if( collection[j] > collection[i])
     {
       number = collection[i];
-    }
-    else
-    {
-      number = collection[j];
     }
   }
   return number;

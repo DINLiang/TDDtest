@@ -1,6 +1,6 @@
 'use strict';
 var rank_desc = function(collection){
-  var  array = collection.sort();
+  var array = collection.sort();
   return array;
 };
 
