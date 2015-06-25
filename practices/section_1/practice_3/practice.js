@@ -3,12 +3,9 @@ function collection_same_elements(collection_a, object_b) {
 
   var collection_b = object_b.value;
   var array = [];
-  for(var i = 0;i < collection_a.length;i++){
-    for(var j = 0;j < collection_b.length;j++){
-      if(collection_a[i] === collection_b[j]){
-        array.push(collection_a[i]);
-      }
-    }
+  for(var i = 0;i < collection_a.length;i++)
+  {
+    array = get_array(collection_b,collection_a,array,i);
   }
   return array;
 }

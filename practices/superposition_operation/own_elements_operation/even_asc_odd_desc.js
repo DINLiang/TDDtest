@@ -4,11 +4,14 @@ var even_asc_odd_desc = function(collection){
 
   var left_array = [];
   var right_array = [];
-  for(var i = 0;i<collection.length;i++){
-    if(collection[i]%2 === 0){
+  for(var i = 0;i<collection.length;i++)
+  {
+    if(collection[i]%2 === 0)
+    {
       left_array.push(collection[i]);
     }
-    else{
+    else
+    {
       right_array.push(collection[i]);
     }
   }
